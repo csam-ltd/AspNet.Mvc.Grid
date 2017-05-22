@@ -76,7 +76,9 @@ namespace AspNet.Mvc.Grid
 			get { return _sections; }
 		}
 
-		/// <summary>
+	    bool IGridModel<T>.RenderHeaderWhenEmpty { get; set; }
+
+	    /// <summary>
 		/// Section overrides for this grid model.
 		/// </summary>
 		public GridSections<T> Sections

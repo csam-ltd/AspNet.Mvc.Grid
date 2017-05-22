@@ -202,12 +202,15 @@ namespace AspNet.Mvc.Grid
 
 		protected override void RenderEmpty()
 		{
-		    RenderHeadStart();
+		    const string emptyRowCssClass = @"class=""empty-row""";
+		    const string emptyCellCssClass = @"class=""empty-cell""";
+
+            RenderHeadStart();
 		    RenderEmptyHeaderCellStart();
 		    RenderHeaderCellEnd();
             RenderHeadEnd();            
 		    RenderBodyStart();
-			RenderText("<tr><td>" + GridModel.EmptyText + "</td></tr>");
+			RenderText($"<tr {emptyRowCssClass}><td {emptyCellCssClass}>{GridModel.EmptyText}</td></tr>");
             RenderBodyEnd();
 		}
 

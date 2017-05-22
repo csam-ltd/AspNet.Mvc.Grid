@@ -10,7 +10,8 @@ namespace AspNet.Mvc.Grid
 		IGridRenderer<T> Renderer { get; set; }
 		IList<GridColumn<T>> Columns { get; }
 		IGridSections<T> Sections { get; }
-		string EmptyText { get; set; }
+        bool RenderHeaderWhenEmpty { get; set; }
+        string EmptyText { get; set; }
 		IDictionary<string, object> Attributes { get; set; }
 		GridSortOptions SortOptions { get; set; }
 		string SortPrefix { get; set; }

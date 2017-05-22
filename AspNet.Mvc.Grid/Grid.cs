@@ -76,7 +76,14 @@ namespace AspNet.Mvc.Grid
 			return this;
 		}
 
-		public IGrid<T> WithModel(IGridModel<T> model)
+	    public IGridWithOptions<T> RenderHeaderWhenEmpty(bool render)
+	    {
+	        _gridModel.RenderHeaderWhenEmpty = render;
+	        return this;
+	    }
+
+
+        public IGrid<T> WithModel(IGridModel<T> model)
 		{
 			_gridModel = model;
 			return this;

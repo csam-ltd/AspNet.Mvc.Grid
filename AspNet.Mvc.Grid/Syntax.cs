@@ -37,12 +37,14 @@ namespace AspNet.Mvc.Grid
 		/// <returns></returns>
 		IGridWithOptions<T> Columns(Action<ColumnBuilder<T>> columnBuilder);
 
-		/// <summary>
-		/// Text to render when grid is empty.
-		/// </summary>
-		/// <param name="emptyText">Empty Text</param>
-		/// <returns></returns>
-		IGridWithOptions<T> Empty(string emptyText);
+	    IGridWithOptions<T> RenderHeaderWhenEmpty(bool render);
+
+        /// <summary>
+        /// Text to render when grid is empty.
+        /// </summary>
+        /// <param name="emptyText">Empty Text</param>
+        /// <returns></returns>
+        IGridWithOptions<T> Empty(string emptyText);
 
 		/// <summary>
 		/// Additional custom attributes

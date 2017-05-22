@@ -105,8 +105,8 @@ namespace AspNet.Mvc.Grid
 
 		protected virtual bool RenderHeader()
 		{
-			//No items - do not render a header.
-			if(! ShouldRenderHeader()) return false;
+			//No items and header not forced to render then don't render it.
+			if(!ShouldRenderHeader()) return false;
 
 			RenderHeadStart();
 
@@ -149,7 +149,7 @@ namespace AspNet.Mvc.Grid
 
 		protected virtual bool ShouldRenderHeader()
 		{
-			return !IsDataSourceEmpty();
+			return GridModel.RenderHeaderWhenEmpty || !IsDataSourceEmpty();
 		}
 
 		protected bool IsDataSourceEmpty()
